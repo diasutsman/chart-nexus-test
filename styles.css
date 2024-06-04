@@ -1,0 +1,59 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	margin: 20px;
+}
+
+.header,
+.tabs,
+.theme-switcher {
+	margin-bottom: 10px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+}
+
+th,
+td {
+	padding: 8px;
+	text-align: left;
+}
+
+.flash {
+	animation: flash 1s;
+}
+
+@keyframes flash {
+	from {
+		background-color: yellow;
+	}
+	to {
+		background-color: white;
+	}
+}
+
+.light-theme {
+	background-color: white;
+	color: black;
+}
+
+.dark-theme {
+	background-color: black;
+	color: white;
+}
+
+.dark-theme table,
+.dark-theme th,
+.dark-theme td {
+	border: 1px solid white;
+}

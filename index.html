@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Stock Market Widget</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<select id="exchange">
+					<option value="0">SGX</option>
+					<option value="2">Bursa</option>
+					<option value="3">Nasdaq</option>
+				</select>
+			</div>
+			<div class="content">
+				<div class="tabs">
+					<button data-list="0">Top Volume</button>
+					<button data-list="1">Top Gainers</button>
+					<button data-list="2">Top Losers</button>
+				</div>
+				<table id="stockTable">
+					<thead>
+						<tr>
+							<th>Stock Name</th>
+							<th>Code</th>
+							<th>Last</th>
+							<th>Vol</th>
+							<th>Buy</th>
+							<th>Buy Vol</th>
+							<th>Sell</th>
+							<th>Sell Vol</th>
+							<th>+/-</th>
+							<th>% Chg</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div class="theme-switcher">
+				<button id="light-theme">Light Theme</button>
+				<button id="dark-theme">Dark Theme</button>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
