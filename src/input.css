@@ -34,7 +34,7 @@
 	}
 
 	.blink-change {
-		@apply animate-flash
+		@apply animate-flash;
 	}
 
 	#stockTable td,

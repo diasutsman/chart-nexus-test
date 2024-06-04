@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	const stockTableBody = document
 		.getElementById("stockTable")
 		.querySelector("tbody");
-	const lightThemeBtn = document.getElementById("light-theme");
-	const darkThemeBtn = document.getElementById("dark-theme");
 	let currentExchange = 0;
 	let currentList = 0;
 
@@ -22,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function updateTable(data) {
 		stockTableBody.innerHTML = "";
-		console.clear();
+		// console.clear();
 		data.forEach((stock, i) => {
 			const row = document.createElement("tr");
 
@@ -40,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			let previousStockDifference = previousStock.last - previousStock.previous;
 			if (isNaN(previousStockDifference)) previousStockDifference = 0;
 
-			console.log({
-				previousStock,
-				stock,
-			});
+			// console.log({
+			// 	previousStock,
+			// 	stock,
+			// });
 
 			const previousStockDifferencePercentage = (
 				(100 * previousStockDifference) /
@@ -56,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
 									stock.stockcode != previousStock.stockcode
 										? "animate-flash"
 										: ""
-								}">
+								} dark:text-white">
                     <span class="font-bold">${stock.name}</span>
                     <br>
                     ${stock.stockcode}
                 </td>
-                <td class="${statusStockClass} text-right ${
+                <td class="${statusStockClass}  text-right ${
 				stock.last != previousStock.last || stock.volume != previousStock.volume
 					? "animate-flash"
 					: ""
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${formatBigNumber(stock.volume)}
                 </td>
 
-                <td class="${statusStockClass} text-right ${
+                <td class="${statusStockClass}  text-right ${
 				stockDifference != previousStockDifference ||
 				stockDifferencePercentage != previousStockDifferencePercentage
 					? "animate-flash"
@@ -82,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${sign}${stockDifferencePercentage}%
                 </td>
 
-                <td class="text-right ${
+                <td class="text-right dark:text-white ${
 									stock.buy_price != previousStock.buy_price ||
 									stock.buy_volume != previousStock.buy_volume
 										? "animate-flash"
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <br>
                     ${formatBigNumber(stock.buy_volume)}
                 </td>
-                <td class="text-right ${
+                <td class="text-right dark:text-white ${
 									stock.sell_price != previousStock.sell_price ||
 									stock.sell_volume != previousStock.sell_volume
 										? "animate-flash"
@@ -126,13 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function formatNumberTo2DecimalPlaces(number) {
-		console.log({ number });
 		return number.toFixed(2);
 	}
 
 	exchangeSelect.addEventListener("change", function () {
 		currentExchange = this.value;
-        previousData.clear();
+		previousData.clear();
 		fetchData();
 	});
 
@@ -145,15 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			currentList = nextList;
 			fetchData();
 		});
-	});
-
-	lightThemeBtn.addEventListener("click", function () {
-		document.body.className = "light-theme";
-	});
-
-	darkThemeBtn.addEventListener("click", function () {
-		document.body.className = "dark-theme";
-	});
+	}); 
 
 	fetchData();
 	setInterval(fetchData, 5000);
