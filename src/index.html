@@ -39,7 +39,7 @@
 						</select> -->
 
 						<button
-							class="group transition-all duration-200 w-20 h-max p-2 flex flex-row items-center justify-center"
+							class="group transition-all duration-200 w-20 h-max p-2 flex flex-row items-center justify-center dark:text-white"
 							@click="show = true;"
 							@click.outside="show = false"
 						>
@@ -59,15 +59,15 @@
 							</svg>
 						</button>
 						<div
-							class="absolute shadow-lg -bottom-40 left-0 w-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2"
+							class="absolute shadow-lg -bottom-40 left-0 w-max p-2 dark:bg-black bg-white border border-zinc-200 rounded-lg flex flex-col gap-2"
 							x-show="show"
 						>
 							<template x-for="item in Object.keys(exchangeNames)" :key="item">
 								<span
 									@click="show=false;currentExchange=item;changeExchange(currentExchange)"
-									class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg cursor-pointer"
+									class="dark:bg-black flex flex-row gap-2 items-center hover:bg-zinc-100 hover:dark:bg-zinc-600 p-2 rounded-lg cursor-pointer"
 								>
-									<p x-text="exchangeNames[item]"></p>
+									<p class="dark:text-white" x-text="exchangeNames[item]"></p>
 								</span>
 							</template>
 						</div>
