@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /*
 ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
@@ -452,6 +452,40 @@ body{
   font-family: Lato;
 }
 
+.quotes-btn-submenu{
+  margin-top: 0.25rem;
+  flex: 1 1 0%;
+  white-space: nowrap;
+  border-radius: 0px;
+  border-width: 0px;
+  background-color: transparent;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.125rem;
+  padding-top: 0px;
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.quotes-btn-submenu.active{
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(35 131 243 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(35 131 243 / var(--tw-text-opacity));
+}
+
+.quotes-btn-submenu:hover:not(.active){
+  --tw-text-opacity: 1;
+  color: rgb(35 131 243 / var(--tw-text-opacity));
+}
+
+.quotes-btn-submenu:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 247 253 / var(--tw-bg-opacity));
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -607,12 +641,26 @@ body{
   display: table;
 }
 
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
 .items-center{
   align-items: center;
 }
 
 .justify-between{
   justify-content: space-between;
+}
+
+.divide-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(2px * var(--tw-divide-x-reverse));
+  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .bg-\[\#f6f7fc\]{

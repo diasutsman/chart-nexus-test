@@ -6,6 +6,7 @@
 		<title>Stock Market Widget</title>
 		<!-- <link rel="stylesheet" href="styles.css" /> -->
 		<link rel="stylesheet" href="output.css" />
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
 	</head>
 	<body>
 		<div class="container mx-auto">
@@ -19,11 +20,13 @@
 					</select>
 				</div>
 			</div>
-			<!-- <div class="content">
-				<div class="tabs">
-					<button data-list="0">Top Volume</button>
-					<button data-list="1">Top Gainers</button>
-					<button data-list="2">Top Losers</button>
+			<div class="content">
+				<div class="tabs flex flex-nowrap divide-x-2 border-b-2" x-data="{
+                    currentList: 0
+                }">
+					<button data-list="0" class="quotes-btn-submenu" :class="currentList == 0 && 'active'" @click="currentList = 0">Top <br> Volume</button>
+					<button data-list="1" class="quotes-btn-submenu" :class="currentList == 1 && 'active'" @click="currentList = 1">Top <br> Gainers</button>
+					<button data-list="2" class="quotes-btn-submenu" :class="currentList == 2 && 'active'" @click="currentList = 2">Top <br> Losers</button>
 				</div>
 				<table id="stockTable">
 					<thead>
@@ -46,7 +49,7 @@
 			<div class="theme-switcher">
 				<button id="light-theme">Light Theme</button>
 				<button id="dark-theme">Dark Theme</button>
-			</div> -->
+			</div>
 		</div>
 		<script src="script.js"></script>
 	</body>
