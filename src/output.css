@@ -486,6 +486,24 @@ body{
   background-color: rgb(246 247 253 / var(--tw-bg-opacity));
 }
 
+.positive{
+  --tw-text-opacity: 1;
+  color: rgb(32 160 92 / var(--tw-text-opacity));
+}
+
+.negative{
+  --tw-text-opacity: 1;
+  color: rgb(209 42 38 / var(--tw-text-opacity));
+}
+
+#stockTable td,
+	#stockTable th{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -594,40 +612,6 @@ body{
   --tw-contain-style:  ;
 }
 
-.container{
-  width: 100%;
-}
-
-@media (min-width: 640px){
-  .container{
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px){
-  .container{
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container{
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px){
-  .container{
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px){
-  .container{
-    max-width: 1536px;
-  }
-}
-
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -639,6 +623,28 @@ body{
 
 .table{
   display: table;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.table-auto{
+  table-layout: auto;
+}
+
+@keyframes flash{
+  0%, 100%{
+    background-color: inherit;
+  }
+
+  50%{
+    background-color: orange;
+  }
+}
+
+.animate-flash{
+  animation: flash 1s ease-in-out;
 }
 
 .flex-nowrap{
@@ -663,9 +669,19 @@ body{
   border-bottom-width: 2px;
 }
 
+.border-b-black{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-\[\#f6f7fc\]{
   --tw-bg-opacity: 1;
   background-color: rgb(246 247 252 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#f6f7fd\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 247 253 / var(--tw-bg-opacity));
 }
 
 .px-3{
@@ -678,15 +694,36 @@ body{
   padding-bottom: 0.5rem;
 }
 
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold{
   font-weight: 700;
 }
 
+.font-normal{
+  font-weight: 400;
+}
+
 .uppercase{
   text-transform: uppercase;
+}
+
+.text-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\]{
+  color: rgba(0,0,0,0.5);
 }

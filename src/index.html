@@ -6,10 +6,13 @@
 		<title>Stock Market Widget</title>
 		<!-- <link rel="stylesheet" href="styles.css" /> -->
 		<link rel="stylesheet" href="output.css" />
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"
+		></script>
 	</head>
 	<body>
-		<div class="container mx-auto">
+		<div class="mx-auto">
 			<div class="flex items-center justify-between px-3 py-2 bg-[#f6f7fc]">
 				<h1 class="font-bold text-2xl uppercase">DELAYED QUOTES</h1>
 				<div>
@@ -21,26 +24,63 @@
 				</div>
 			</div>
 			<div class="content">
-				<div class="tabs flex flex-nowrap divide-x-2 border-b-2" x-data="{
+				<div
+					class="tabs flex flex-nowrap divide-x-2 border-b-2"
+					x-data="{
                     currentList: 0
-                }">
-					<button data-list="0" class="quotes-btn-submenu" :class="currentList == 0 && 'active'" @click="currentList = 0">Top <br> Volume</button>
-					<button data-list="1" class="quotes-btn-submenu" :class="currentList == 1 && 'active'" @click="currentList = 1">Top <br> Gainers</button>
-					<button data-list="2" class="quotes-btn-submenu" :class="currentList == 2 && 'active'" @click="currentList = 2">Top <br> Losers</button>
+                }"
+				>
+					<button
+						data-list="0"
+						class="quotes-btn-submenu"
+						:class="currentList == 0 && 'active'"
+						@click="currentList = 0"
+					>
+						Top <br />
+						Volume
+					</button>
+					<button
+						data-list="1"
+						class="quotes-btn-submenu"
+						:class="currentList == 1 && 'active'"
+						@click="currentList = 1"
+					>
+						Top <br />
+						Gainers
+					</button>
+					<button
+						data-list="2"
+						class="quotes-btn-submenu"
+						:class="currentList == 2 && 'active'"
+						@click="currentList = 2"
+					>
+						Top <br />
+						Losers
+					</button>
 				</div>
-				<table id="stockTable">
+				<table id="stockTable" class="table-auto w-full">
 					<thead>
-						<tr>
-							<th>Stock Name</th>
-							<th>Code</th>
-							<th>Last</th>
-							<th>Vol</th>
-							<th>Buy</th>
-							<th>Buy Vol</th>
-							<th>Sell</th>
-							<th>Sell Vol</th>
-							<th>+/-</th>
-							<th>% Chg</th>
+						<tr class="border-b-black border-b-2">
+							<th class="text-left font-normal text-[rgba(0,0,0,0.5)] text-sm">
+								Stock <br />
+								Code
+							</th>
+							<th class="text-right font-normal text-[rgba(0,0,0,0.5)] text-sm">
+								Last <br />
+								Vol
+							</th>
+							<th class="text-right font-normal text-[rgba(0,0,0,0.5)] text-sm">
+								+/- <br />
+								%Chng
+							</th>
+							<th class="text-right font-normal text-[rgba(0,0,0,0.5)] text-sm">
+								Buy <br />
+								Buy Vol
+							</th>
+							<th class="text-right font-normal text-[rgba(0,0,0,0.5)] text-sm">
+								Sell <br />
+								Sell Vol
+							</th>
 						</tr>
 					</thead>
 					<tbody></tbody>

@@ -13,15 +13,32 @@
 		@apply text-right bg-transparent border-0 rounded-none text-base px-3 pb-0.5 pt-0 mt-1 whitespace-nowrap leading-4 flex-1;
 	}
 
-    .quotes-btn-submenu.active {
-        @apply text-[rgb(35,131,243)] border-b-2 border-b-[rgb(35,131,243)]
-    }
+	.quotes-btn-submenu.active {
+		@apply text-[rgb(35,131,243)] border-b-2 border-b-[rgb(35,131,243)];
+	}
 
-    .quotes-btn-submenu:hover:not(.active) {
-        @apply text-[rgb(35,131,243)]
-    }
+	.quotes-btn-submenu:hover:not(.active) {
+		@apply text-[rgb(35,131,243)];
+	}
 
-    .quotes-btn-submenu:hover {
-        @apply bg-[#f6f7fd]
-    }
+	.quotes-btn-submenu:hover {
+		@apply bg-[#f6f7fd];
+	}
+
+	.positive {
+		@apply text-[#20A05C];
+	}
+
+	.negative {
+		@apply text-[#D12A26];
+	}
+
+	.blink-change {
+		@apply animate-flash
+	}
+
+	#stockTable td,
+	#stockTable th {
+		@apply px-4 py-2;
+	}
 }
