@@ -12,6 +12,12 @@ body {
 	margin-bottom: 10px;
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 table {
 	width: 100%;
 	border-collapse: collapse;

@@ -4,18 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Stock Market Widget</title>
-		<link rel="stylesheet" href="styles.css" />
+		<!-- <link rel="stylesheet" href="styles.css" /> -->
+		<link rel="stylesheet" href="output.css" />
 	</head>
 	<body>
 		<div class="container">
 			<div class="header">
-				<select id="exchange">
-					<option value="0">SGX</option>
-					<option value="2">Bursa</option>
-					<option value="3">Nasdaq</option>
-				</select>
+				<h1>DELAYED QUOTES</h1>
+				<div>
+					<select id="exchange">
+						<option value="0">SGX</option>
+						<option value="2">Bursa</option>
+						<option value="3">Nasdaq</option>
+					</select>
+				</div>
 			</div>
-			<div class="content">
+			<!-- <div class="content">
 				<div class="tabs">
 					<button data-list="0">Top Volume</button>
 					<button data-list="1">Top Gainers</button>
@@ -42,7 +46,7 @@
 			<div class="theme-switcher">
 				<button id="light-theme">Light Theme</button>
 				<button id="dark-theme">Dark Theme</button>
-			</div>
+			</div> -->
 		</div>
 		<script src="script.js"></script>
 	</body>
