@@ -20,12 +20,57 @@
 					DELAYED QUOTES
 				</h1>
 				<div class="flex items-center gap-x-2">
-					<div>
-						<select id="exchange">
+					<div
+						class="relative"
+						x-data="{
+                        currentExchange: 0,
+                        exchangeNames: {
+                            0: 'SGX',
+                            2: 'Bursa',
+                            3: 'Nasdaq',
+                        },
+                        show: false,
+                    }"
+					>
+						<!-- <select id="exchange">
 							<option value="0">SGX</option>
 							<option value="2">Bursa</option>
 							<option value="3">Nasdaq</option>
-						</select>
+						</select> -->
+
+						<button
+							class="group transition-all duration-200 w-20 h-max p-2 flex flex-row items-center justify-center"
+							@click="show = true;"
+							@click.outside="show = false"
+						>
+							<span x-text="exchangeNames[currentExchange]"></span>
+							<svg
+								class="rotate-180"
+								:class="show && '-rotate-180'"
+								xmlns="http://www.w3.org/2000/svg"
+								width="22"
+								height="22"
+								viewBox="0 0 24 24"
+							>
+								<path
+									fill="currentColor"
+									d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7q-.275.275-.7.275t-.7-.275z"
+								/>
+							</svg>
+						</button>
+						<div
+							class="absolute shadow-lg -bottom-40 left-0 w-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2"
+							x-show="show"
+						>
+							<template x-for="item in Object.keys(exchangeNames)" :key="item">
+								<span
+									@click="show=false;currentExchange=item;changeExchange(currentExchange)"
+									class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg cursor-pointer"
+								>
+									<p x-text="exchangeNames[item]"></p>
+								</span>
+							</template>
+						</div>
 					</div>
 					<div class="theme-switcher">
 						<button

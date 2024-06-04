@@ -127,11 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		return number.toFixed(2);
 	}
 
-	exchangeSelect.addEventListener("change", function () {
-		currentExchange = this.value;
+	function changeExchange(value) {
+		currentExchange = value;
 		previousData.clear();
 		fetchData();
-	});
+	}
+
+	window.changeExchange = changeExchange;
 
 	tabs.forEach((tab) => {
 		tab.addEventListener("click", function () {
@@ -142,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			currentList = nextList;
 			fetchData();
 		});
-	}); 
+	});
 
 	fetchData();
 	setInterval(fetchData, 5000);
